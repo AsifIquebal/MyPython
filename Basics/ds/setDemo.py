@@ -12,3 +12,6 @@ print(set3)
 for x in set3:
     print(x)
 
+
+
+
