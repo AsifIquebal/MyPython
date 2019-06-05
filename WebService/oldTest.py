@@ -28,3 +28,23 @@ def test01_get_number_of_companies():
                             verify=False
                             )
     print("Total Countries found: ",len(jsonpath.jsonpath(response.json(),"$.[*].id")))
+
+
+def test02_oo():
+    header = {"Content-Type": "application/json;charset=UTF-8",
+              "Authorization": f"Bearer {get_access_token()}"}
+    print(header)
+    payload = {"pageNo": 1,"orderType": "DESC",
+               "params": "email,companyName,phone,owners,isActive,created,entitiesTypes,canadianTaxId",
+               "pageSize": 25,
+               "orderBy": "created"
+               }
+    print("-------------------------------------")
+    print(payload)
+    print("-------------------------------------")
+    response = requests.post("https://api.inditioncrm.com/CrmSalesTeam-1.28/company/getorsearch",
+                            headers=header,
+                            json=payload,
+                            verify=False
+                            )
+    print(response.json())
