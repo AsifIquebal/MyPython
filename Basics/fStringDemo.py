@@ -30,7 +30,8 @@ def test_compute():
 def to_lowercase(input):
     return input.lower()
 
-
+def area_of_circle():
+    return
 
 class Comedian:
     def __init__(self, first_name, last_name, age):
